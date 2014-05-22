@@ -8,10 +8,10 @@ module.exports.list = function (css) {
   ast.stylesheet.rules.forEach(function visit (rule) {
     if (rule.rules) rule.rules.forEach(visit);
 
-    if (hasStackingContext (rule)) stackingRuleName.push(hasStackingContext);
+    if (hasStackingContext(rule)) stackingRuleName.push(hasStackingContext);
   });
 
-  return StackingRuleName;
+  return stackingRuleName;
 };
 
 function has (rule, property) {
@@ -29,7 +29,7 @@ function hasStackingContext (rule) {
   });
 
   if ((position_val === 'fixed' || position_val === 'sticky')
-  && ((position_val === 'relative' || position_val === 'absolute') && z_val !=== 'auto' )) {
+  && ((position_val === 'relative' || position_val === 'absolute') && z_val !== 'auto' )) {
     return rule.selectors;
   }
   else return null;
