@@ -16,7 +16,7 @@ test('list', function (t) {
     '.z-4-6'
   ];
 
-  t.equal(result, expected);
+  t.same(result, expected);
 
   t.end();
 });
