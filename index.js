@@ -14,6 +14,21 @@ module.exports.list = function (css) {
   return stackingRuleName;
 };
 
+module.exports.level = function (css) {
+  var ast = parse(css);
+  var z_val = [];
+
+  ast.stylesheet.rules.forEach(function visit (rule) {
+    if (rule.rules) rule.rules.forEach(visit);
+
+    rule.declarations.forEach(function (declaration) {
+      if (declaration.property === 'z-index') z_val.push(+declaration.value);
+    });
+  });
+
+  return z_val;
+};
+
 function has (rule, property) {
   rule.declarations.forEach(function (declaration) {
     if (declaration.property === property) return true;

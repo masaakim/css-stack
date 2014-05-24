@@ -20,3 +20,13 @@ test('list', function (t) {
 
   t.end();
 });
+
+test('level', function (t) {
+  var result = stack.level(css);
+
+  var expected = [5, 2, 4, 1, 6];
+
+  t.same(result, expected);
+
+  t.end();
+});
