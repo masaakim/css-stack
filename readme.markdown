@@ -10,6 +10,17 @@ $ npm install css-stack
 
 ## Example
 
+```javascript
+var stack = require('css-stack');
+var css = fs.readFileSync('target.css').toString();
+
+stack.list(css);
+// return selectors have stacking context
+
+stack.level(css);
+// return all of `z-index` values
+```
+
 ## License
 
 The MIT License (MIT)
