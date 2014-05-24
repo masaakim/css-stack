@@ -1,6 +1,6 @@
 # css-stack [![Build Status](https://travis-ci.org/morishitter/css-stack.svg)](https://travis-ci.org/morishitter/css-stack)
 
-Visualize stacking contexts and stack level
+Analize stacking contexts and stack level
 
 ## Installation
 
